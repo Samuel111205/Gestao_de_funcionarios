@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastrando funcionario</h1>
+    <form action="/cadastrados" method="post">
+        <label>Nome: </label>
+        <input type="text" name="nome">
+        <br><br>
+
+        <label>Data nascimento</label>
+        <input type="date" name="data_nascimento">
+        <br><br>
+
+        <label>Genero: </label>
+        <input type="text" name="genero">
+        <br><br>
+
+        <label>Estado civil: </label>
+        <input type="text" name="estado_civil">
+        <br><br>
+
+        <label>Email: </label>
+        <input type="email" name="email">
+        <br><br>
+
+        <label>Telefone: </label>
+        <input type="number" name="telefone">
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <a href="{{url_for('home')}}">Voltar a pagina principal</a>
+</body>
+</html>

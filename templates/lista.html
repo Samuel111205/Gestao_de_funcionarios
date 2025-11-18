@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de funcionarios</title>
+</head>
+<body>
+    <h1>Lista de funcionarios</h1>
+    <ul>
+        {% for item in funcionarios %}
+            <li>{{item[0]}}</li>
+            <li>{{item[1]}}</li>
+            <li>{{item[2]}}</li>
+            <li>{{item[3]}}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{url_for('home')}}">Voltar a pagina principal</a>
+</body>
+</html>
