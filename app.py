@@ -18,7 +18,7 @@ def cadastrados():
     cursor=conn.cursor()
 
     criar_tabela()
-    nome=request.form["nome"]
+    nome=request.form["nome"].title()
     data_nascimento=request.form["data_nascimento"]
     genero=request.form["genero"]
     estado_civil=request.form["estado_civil"]
@@ -47,10 +47,46 @@ def lista():
     cursor=conn.cursor()
 
     criar_tabela()
-    cursor.execute("SELECT id, nome, email, telefone FROM funcionario ORDER BY nome")
+    cursor.execute("SELECT id, nome, estado_civil, email, telefone FROM funcionario ORDER BY nome")
     dados=cursor.fetchall()
     conn.close()
     return render_template("lista.html",funcionarios=dados)
+
+@app.route('/editar/<int:id>')
+def editar(id):
+    conn=conectar()
+    cursor=conn.cursor()
+
+    criar_tabela()
+    cursor.execute("SELECT id,nome,estado_civil,email,telefone FROM funcionario WHERE id=?",(id,))
+    funcionario=cursor.fetchall()
+    conn.close()
+
+    return render_template("editar_funcionario.html", funcionario=funcionario)
+
+@app.route('/atualizar', methods=["PT"])
+@app.route('/atualizar', methods=["PUT"])
+def atualizar():
+
+    id=request.form['id']
+    nome=request.form['nome'].title()
+    estado_civil=request.form['estado_civil']
+    email=request.form['email']
+    telefone=request.form['telefone']
+
+    conn=conectar()
+    cursor=conn.cursor()
+
+    criar_tabela()
+    cursor.execute("""
+        UPDATE funcionario 
+        SET nome=?, estado_civil=?,email=?,telefone=?
+        WHERE id=?
+    """,(id,nome,estado_civil,email,telefone))
+    conn.commit()
+    conn.close()
+
+    return redirect('/')
 
 
 if __name__=="__main__":
