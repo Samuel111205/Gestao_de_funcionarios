@@ -1,6 +1,9 @@
-import sqlite3
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
-def conectar():
-    return sqlite3.connect("funcionario.db")
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///funcionario.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
-conectar()
+db=SQLAlchemy(app)
+

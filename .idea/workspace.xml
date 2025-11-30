@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/rotas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotas/cargos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotas/departamento.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotas/funcionario.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rotas/home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cadastrar_cargos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/cadastrar_departamento.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/listar_cargos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/listar_departamento.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/banco_de_daos.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/banco_de_daos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/criar_tabelas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/funcionario.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/funcionario.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editar_funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editar_funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lista.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="36DVMu76SE3VU8T9DtZve18F80A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.banco_de_daos.executor": "Run",
+    "Python.criar_tabelas.executor": "Run",
+    "Python.ex.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/FRANCISCO MORAIS/Documents/programas_em_python/Projeto de si/modulo_de_classes.py"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="" />
+      <created>1764541103662</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764541103662</updated>
+    </task>
+    <servers />
+  </component>
+</project>
