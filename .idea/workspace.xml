@@ -5,30 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/rotas/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/cargos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/departamento.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/funcionario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotas/home.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/js.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadastrar_cargos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/cadastrar_departamento.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/listar_cargos.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/listar_departamento.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/cargos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/contratos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/departamentos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/funcionarios.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/presencas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modelos/salarios.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/banco_de_daos.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/banco_de_daos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/banco_de_daos.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/criar_tabelas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/funcionario.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/funcionario.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/static.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/editar_funcionario.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/editar_funcionario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotas/cargos.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/cargos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotas/departamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/departamento.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rotas/funcionario.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/funcionario.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_departamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_departamento.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lista.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -58,14 +54,70 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app.executor": "Run",
     "Python.banco_de_daos.executor": "Run",
+    "Python.cargos.executor": "Run",
     "Python.criar_tabelas.executor": "Run",
+    "Python.departamentos.executor": "Run",
     "Python.ex.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/FRANCISCO MORAIS/Documents/programas_em_python/Projeto de si/modulo_de_classes.py"
+    "last_opened_file_path": "C:/Users/FRANCISCO MORAIS/Documents/programas_em_python/Projeto de si/modulo_de_classes.py",
+    "settings.editor.selected.configurable": "com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable"
   }
 }]]></component>
+  <component name="RunManager" selected="Python.criar_tabelas">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gestao_de_funcionarios" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="criar_tabelas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gestao_de_funcionarios" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database/criar_tabelas.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.criar_tabelas" />
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>

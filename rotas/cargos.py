@@ -1,6 +1,5 @@
 from flask import Blueprint, request, render_template,redirect
-from database.banco_de_daos import conectar
-from database.criar_tabelas import criar_tabela
+
 
 cargo_route=Blueprint('cargos', __name__)
 

@@ -1,17 +1,22 @@
-from flask import Blueprint, request, render_template,redirect
-from database.banco_de_daos import conectar
-from database.criar_tabelas import criar_tabela
+from flask import Blueprint, request, render_template,redirect,url_for
+from modelos.departamentos import Departamentos
+from database import db
 
-departamento_route=Blueprint('departamento', __name__)
+departamento_route=Blueprint('departamento', __name__,url_prefix="/departamento")
 
-#Rota para cadastrar o departamento
-@departamento_route.route('/departamento/novo')
-def cadastrar_departamento():
-    pass
+
+
 #Inserir o departamento
-@departamento_route.route('/departamento', methods=['POST'])
+@departamento_route.route('/departamento', methods=['GET','POST'])
 def inserir_departamento():
-    pass
+    if request.method=="POST":
+        nome_departamento=request.form["nome_departamento"]
+        departamento=Departamentos(nome_departamento=nome_departamento)
+        db.session.add(departamento)
+        db.session.commit()
+        return redirect(url_for( "departamento.listar"))
+
+    return render_template("cadastrar_departamento.html")
 
 # Listar Departamento
 @departamento_route.route('/funcionarios')

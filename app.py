@@ -1,15 +1,25 @@
-from flask import *
-from rotas.home import home_route
-from rotas.funcionario import funcionario_route
-from rotas.departamento import departamento_route
-from rotas.cargos import cargo_route
+from flask import Flask
+from database import db
 
-app=Flask(__name__)
+def criar_app():
+    app=Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///funcionario.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
 
-app.register_blueprint(home_route)
-app.register_blueprint(funcionario_route)
-app.register_blueprint(departamento_route)
-app.register_blueprint(cargo_route)
+    db.init_app(app)
+
+    from rotas.home import home_route
+    from rotas.funcionario import funcionario_route
+    from rotas.departamento import departamento_route
+    from rotas.cargos import cargo_route
+
+    app.register_blueprint(home_route)
+    app.register_blueprint(funcionario_route)
+    app.register_blueprint(departamento_route)
+    app.register_blueprint(cargo_route)
+
+    return app
 
 if __name__=="__main__":
+    app=criar_app()
     app.run(debug=True)
