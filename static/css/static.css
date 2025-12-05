@@ -1,3 +1,26 @@
-body{
-    background-fo
-}
+body {
+    background-color:whitesmoke;
+    h3 {
+        color:blue;
+        font-size:20px;
+        border:1px solid black;
+        border-radius: 30px;
+        text-align: center;
+        background: rgb(249, 251, 253);
+    }
+    h2{
+        text-align: center;
+        color:blue;
+
+    }
+
+    h1 {
+        color:rgb(226, 237, 12);
+        text-align: center;
+
+    }
+    h4{
+        color:yellow;
+    }
+
+ }

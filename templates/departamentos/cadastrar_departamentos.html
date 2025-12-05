@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Cadastrar departamento{% endblock %}
+{% block conteudo %}
+<h2>Cadastrar departamento</h2>
+<form action="{{url_for('departamento.inserir_departamento')}}" method="post" class="mt-3">
+    <div class="mb-3">
+        <label class="form-label">Nome do departamento</label>
+        <input type="text" name="nome_departamento" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+{% endblock %}

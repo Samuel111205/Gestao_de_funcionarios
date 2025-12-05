@@ -5,26 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/modelos/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/cargos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/contratos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/departamentos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/funcionarios.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/presencas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/modelos/salarios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/banco_de_dados.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cargos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cargos/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/cargos/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/departamentos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/departamentos/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/departamentos/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/funcionarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/funcionarios/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/funcionarios/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/home.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/cadastro.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/departamentos/cadastrar_departamentos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/departamentos/lista_departamentos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/funcionarios/editar_funcionarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/funcionarios/listar_funcionarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/banco_de_daos.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" afterPath="$PROJECT_DIR$/database/criar_tabelas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/funcionario.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/funcionario.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/cargos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/contratos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/departamentos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/funcionarios.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/presencas.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modelos/salarios.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/cargos.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/cargos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/departamento.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/departamento.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/funcionario.py" beforeDir="false" afterPath="$PROJECT_DIR$/rotas/funcionario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cadastrar_departamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cadastrar_departamento.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/static.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/static.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_cargos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cargos/cadastrar_cargos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastrar_departamento.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/editar_funcionario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lista.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/listar_cargos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cargos/listar_cargos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/listar_departamento.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/cadastrar_funcionarios.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +64,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/templates/editar_funcionario.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -51,22 +76,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.app.executor": "Run",
-    "Python.banco_de_daos.executor": "Run",
-    "Python.cargos.executor": "Run",
-    "Python.criar_tabelas.executor": "Run",
-    "Python.departamentos.executor": "Run",
-    "Python.ex.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/FRANCISCO MORAIS/Documents/programas_em_python/Projeto de si/modulo_de_classes.py",
-    "settings.editor.selected.configurable": "com.intellij.platform.ide.impl.presentationAssistant.PresentationAssistantConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.banco_de_daos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cargos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.criar_tabelas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.departamentos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FRANCISCO MORAIS/Documents/index.html&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.criar_tabelas">
+}</component>
+  <component name="RunManager" selected="Python.run">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Gestao_de_funcionarios" />
       <option name="ENV_FILES" value="" />
@@ -111,10 +137,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gestao_de_funcionarios" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.criar_tabelas" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.criar_tabelas" />
       </list>
     </recent_temporary>
   </component>

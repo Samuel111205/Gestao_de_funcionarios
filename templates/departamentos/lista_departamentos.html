@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Departamentos{% endblock %}
+{% block conteudo %}
+<h2>Departamentos</h2>
+<a href="{{ url_for('departamento.cadastrar_departamentos')}}" class="nb-3">
+    Novo departamento
+</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Departamento</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dep in departamentos.items %}
+        <tr>
+            <td>{{ dep.id }}</td>
+            <td>{{ dep.nome_departamento }}</td>
+            <td>
+                <form action="{{ url_for('departamento.deletar_departamento', departamento_id=dep.id)}}" method="post">
+                    <button class="btn btn-danger btn-sm">Deletar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
