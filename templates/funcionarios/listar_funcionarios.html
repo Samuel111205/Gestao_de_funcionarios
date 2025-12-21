@@ -1,10 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %} Funcionarios {% endblock %}
+{% block conteudo %}
+ <h2>Funcionarios</h2>
+<a href="{{ url_for('funcionario.cadastrar_funcionario')}}" class="btn btn-success">
+    Novo funcionario
+</a>
+<table class="table table-striped" border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in funcionarios %}
+        <tr>
+            <td>{{ f.id }}</td>
+            <td>{{ f.nome_funcionario }}</td>
+            <td>{{ f.cargo.nome_cargo }}</td>
+            <td>{{ f.cargo.departamento.nome_departamento }}</td>
+            <td>{{ f.email }}</td>
+            <td>{{ f.telefone }}</td>
+            <td>
+                <a class="btn btn-warning btn-sm" href="{{ url_for ('funcionario.editar_funcionario', funcionario_id=f.id)}}">
+                    Editar
+                </a>
+                <form action="{{ url_for('funcionario.deletar_funcionario', funcionario_id=f.id)}}" method="post" style="display:inline">
+                    <button class="btn btn-danger btn-sm">Deletar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

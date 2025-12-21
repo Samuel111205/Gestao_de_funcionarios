@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Cargos {% endblock %}
 
-</body>
-</html>
+{% block conteudo %}
+<h2>Cargos</h2>
+<a href="{{ url_for('cargos.cadastrar_cargo') }}" class="btn btn-sucess mt-3">
+    Novo cargo
+</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cargo in cargos %}
+            <tr>
+                <td>{{ cargo.id }}</td>
+                <td>{{ cargo.nome_cargo }}</td>
+                <td>{{ cargo.departamento.nome_departamento }}</td>
+                <td>
+                    <form action="{{ url_for('cargos.deletar_cargo', cargo_id=cargo.id) }}" method="post">
+                        <button class="btn btn-danger btn-sm">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

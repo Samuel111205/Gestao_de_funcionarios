@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} Cadastrar Cargos {% endblock %}
 
-</body>
-</html>
+{% block conteudo %}
+<h2>Cadastrar Cargos</h2>
+<form action="{{ url_for('cargos.inserir_cargo')}}" method="post" class="mt-3">
+    <div class="mb-3">
+        <label class="form-label">Nome do cargo: </label>
+        <input type="text" name="nome_cargo" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Departamento: </label>
+        <select name="departamento_id" class="form-select" required>
+            {% for dep in departamentos %}
+                <option value="{{ dep.id }}">{{ dep.nome_departamento }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button class="btn btn-primary">Cadastrar</button>
+</form>
+{% endblock %}

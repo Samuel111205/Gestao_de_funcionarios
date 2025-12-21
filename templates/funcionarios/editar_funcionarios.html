@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Editar Funcionarios {% endblock %}
+{% block conteudo %}
 
-</body>
-</html>
+<h2>Editar Funcionario</h2>
+<form action="{{ url_for('funcionario.atualizar_funcionario', funcionario_id=funcionario.id)}}" method="post" class="mt-3">
+    <div class="mb-3">
+        <label class="form-label">Nome: </label>
+        <input type="text" name="nome" value="{{ funcionario.nome_funcionario }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Estado civil: </label>
+        <input type="text" name="estado_civil" value="{{ funcionario.estado_civil }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email: </label>
+        <input type="email" name="email" value="{{ funcionario.email }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Telefone: </label>
+        <input type="text" name="telefone" value="{{ funcionario.telefone }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Cargo: </label>
+        <select name="cargo_id" class="form-select">
+            {% for cargo in cargos %}
+                <option value="{{ cargo.id }}" {% if funcionario.cargo_id==cargo.id %} selected {% endif %}>{{ cargo.nome_cargo }}
+            {% endfor %}
+        </select>
+    </div>
+    <button class="btn btn-primary">Salvar</button>
+</form>
+{% endblock %}

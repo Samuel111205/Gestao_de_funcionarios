@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>{% block title %} Sistema de Gestão {% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boostrap@5.3.0/dist/css/boostrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
@@ -11,20 +12,44 @@
             <a class="navbar-brand" href="{{url_for('home.home')}}">
                 Gestão de funcionarios
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarConteudo" aria-controls="navbar-Conteudo" aria-expanded="false" aria-label="Menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarConteudo">
+            <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url_for('departamento.listar_departamento')}}">
-                            Departamentos
+                        <a href="{{ url_for('home.home')}}">
+                            Inicio
                         </a>
-                        <a class="nav-link" href="{{url_for('cargos.listar_cargo')}}">
-                            Cargos
+                    </li>
+                    <li class="nav-item dorpdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cadastros
                         </a>
-                        <a class="nav-link" href="{{url_for('funcionario.listar_funcionarios')}}">
-                            Funcionarios
+
+                        <ul class="dropdown-menu">
+                            <li >
+                                <a class="dropdown-item" href="{{url_for('departamento.listar_departamento')}}">
+                                    Departamentos
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{url_for('cargos.listar_cargo')}}">
+                                    Cargos
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{url_for('funcionario.listar_funcionarios')}}">
+                                    Funcionarios
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link disabled">
+                            Administrador
                         </a>
                     </li>
                 </ul>
