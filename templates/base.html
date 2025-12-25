@@ -28,6 +28,11 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{url_for('categoria.listar')}}">
+                                    Categorias
+                                </a>
+                            </li>
                             <li >
                                 <a class="dropdown-item" href="{{url_for('departamento.listar_departamento')}}">
                                     Departamentos
@@ -47,11 +52,24 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link disabled">
-                            Administrador
-                        </a>
-                    </li>
+                    {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <span class="nav-link">
+                                {{ current_user.nome }}
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.logout') }}">
+                                Logout
+                            </a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('auth.login') }}">
+                                Login
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

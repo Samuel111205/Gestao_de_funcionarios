@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Ver dados do funcionario {% endblock %}
+{% block conteudo %}
+<h2>Dados do funcionario</h2>
+<p>Nome: {{ funcionario.nome_funcionario }}</p>
+<p>Data de Nascimento: {{ funcionario.data_nascimento }}</p>
+<p>Genero: {{ funcionario.genero }}</p>
+<p>Estado civil: {{ funcionario.estado_civil }}</p>
+<p>Email: {{ funcionario.email }}</p>
+<p>Telefone: {{ funcionario.telefone }}</p>
+{% endblock %}

@@ -5,12 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Gestao_de_funcionarios.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/auth/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/auth/permissoes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/auth/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/categorias/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/categorias/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/categorias/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/contratos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/contratos/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/contratos/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/folhas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/presencas/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/presencas/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/presencas/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/salarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/salarios/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/salarios/rotas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/salarios/servicos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usuarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/usuarios/modelos.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/criar_usuario.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/auth/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorias/cadastrar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/categorias/listar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/funcionarios/funcionarios_detalhes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/salarios/atualizar_salarios.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/salarios/cadastrar_salario.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/salarios/listar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/cargos/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/cargos/rotas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/departamentos/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/departamentos/rotas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/funcionarios/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/funcionarios/modelos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/funcionarios/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/funcionarios/rotas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" />
@@ -20,7 +47,6 @@
       <change beforePath="$PROJECT_DIR$/modelos/funcionarios.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modelos/presencas.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modelos/salarios.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rotas/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/cargos.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/departamento.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/funcionario.py" beforeDir="false" />
@@ -31,13 +57,9 @@
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cadastrar_departamento.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cadastro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cargos/cadastrar_cargos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cargos/cadastrar_cargos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cargos/listar_cargos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cargos/listar_cargos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/editar_funcionario.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/funcionarios/cadastrar_funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/cadastrar_funcionarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/funcionarios/editar_funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/editar_funcionarios.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/funcionarios/listar_funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/listar_funcionarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/lista.html" beforeDir="false" />
     </list>
@@ -76,12 +98,14 @@
     &quot;Python.banco_de_daos.executor&quot;: &quot;Run&quot;,
     &quot;Python.cargos.executor&quot;: &quot;Run&quot;,
     &quot;Python.criar_tabelas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.criar_usuario.executor&quot;: &quot;Run&quot;,
     &quot;Python.departamentos.executor&quot;: &quot;Run&quot;,
     &quot;Python.ex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modelos.executor&quot;: &quot;Run&quot;,
     &quot;Python.run.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/FRANCISCO MORAIS/Documents/Aula-html/vvv.html&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FRANCISCO MORAIS/Documents/presença.py&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>

@@ -3,9 +3,12 @@ from . import cargo_bp
 from .modelos import Cargos
 from app.banco_de_dados import db
 from app.departamentos.modelos import Departamentos
+from flask_login import login_required
+from app.auth.permissoes import administrador_required
 
 # Rota que Lista todos os cargos e os seus departamentos
 @cargo_bp.route("/")
+@login_required
 def listar_cargo():
     page=request.args.get('page',1,type=int)
     cargos=Cargos.query.order_by(Cargos.nome_cargo).paginate(page=page, per_page=10)
@@ -13,12 +16,14 @@ def listar_cargo():
 
 #Rota que  faz o cadastrando de cargos
 @cargo_bp.route("/cadastrar")
+@login_required
 def cadastrar_cargo():
     departamentos=Departamentos.query.order_by(Departamentos.nome_departamento).all()
     return render_template("cargos/cadastrar_cargos.html", departamentos=departamentos)
 
 #Rota que recebe as informações do formulario e cadastra no banco de dados
 @cargo_bp.route("/inserir", methods=["POST"])
+@login_required
 def inserir_cargo():
     nome_cargo=request.form.get("nome_cargo").title()
     departamento_id=request.form.get("departamento_id")
@@ -44,6 +49,7 @@ def inserir_cargo():
 
 #Rota que deleta um cargo no banco de dados
 @cargo_bp.route("/deletar/<int:cargo_id>", methods=["POST"])
+@login_required
 def deletar_cargo(cargo_id):
     cargo=Cargos.query.get_or_404(cargo_id)
     db.session.delete(cargo)
