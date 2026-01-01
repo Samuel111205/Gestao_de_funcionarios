@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Presencas {% endblock %}
+{% block conteudo %}
+<h3>Presencas de {{ funcionario.nome }}</h3>
+<form action="{{ url_for('presenca.registrar', funcionario_id=funcionario.id) }}" method="post">
+    <div class="row mb-3">
+        <div class="col">
+            <input type="date" name="data" class="form-control" required>
+        </div>
+        <div class="col form-checkbox mt-2">
+            <input type="checkbox" name="presente" class="form-checkbox-input" checked>7
+            <label class="form-checkbox-label">
+                Presente
+            </label>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary">
+                Registrar
+            </button>
+        </div>
+    </div>
+</form>
+<table class="table table-hover">
+    <tr>
+        <th>Data</th>
+        <th>Status</th>
+    </tr>
+    {% for p in funcionario.presencas %}
+    <tr>
+        <td>{{ p.data }}</td>
+        <td>
+            {% if p.presente %}
+                presente
+            {% else %}
+                Falta
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

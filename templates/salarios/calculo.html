@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Calcular Salarios{% endblock %}
+{% block conteudo %}
+<h3>Calculo Salarial</h3>
+<p><strong>Funcionario:</strong> {{ funcionario.nome }}</p>
+<p><strong>Periodo:</strong> {{ mes }}/{{ ano }}</p>
+{% if status!= "OK" %}
+    <div class="alert alert-warning">
+        {{ status }}
+    </div>
+{% else %}
+    <div class="alert alert-success">
+        Salario calculado: <strong>{{ valor }}</strong>
+    </div>
+{% endif %}
+<a href="{{ url_for('funcionario.listar_funcionarios') }}" class="btn btn-secondary">
+    valor
+</a>
+{% endblock %}

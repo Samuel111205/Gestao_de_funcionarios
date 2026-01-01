@@ -35,16 +35,6 @@
             {% endfor %}
         </select>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Categoria: </label>
-        <select name="categoria_id" class="form-select" required>
-            {% for categoria in categorias %}
-            <option value="{{ categoria.id }}">
-                {{ categoria.nome }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
     <button class="btn btn-primary">Cadastrar</button>
 </form>
 {% endblock %}

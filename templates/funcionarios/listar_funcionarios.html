@@ -14,7 +14,6 @@
             <th>Departamento</th>
             <th>Email</th>
             <th>Telefone</th>
-            <th>Categoria</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -27,7 +26,6 @@
             <td>{{ f.cargo.departamento.nome_departamento }}</td>
             <td>{{ f.email }}</td>
             <td>{{ f.telefone }}</td>
-            <td>{{ f.categorias.nome }}</td>
             <td>.
                 <a class="btn btn-warning btn-sm" href="{{ url_for ('funcionario.editar_funcionario', funcionario_id=f.id)}}">
                     Editar
@@ -36,7 +34,13 @@
                     Ver dados
                 </a>
                 <a class="btn btn-warning btn-sm" href="{{ url_for ('salario.listar', funcionario_id=f.id)}}">
-                    Ver dados
+                    Ver Salario
+                </a>
+                <a class="btn btn-warning btn-sm" href="{{ url_for ('contrato.listar', funcionario_id=f.id)}}">
+                    Ver Contrato
+                </a>
+                <a class="btn btn-warning btn-sm" href="{{ url_for ('presenca.listar', funcionario_id=f.id)}}">
+                    Ver presencas
                 </a>
                 <form action="{{ url_for('funcionario.deletar_funcionario', funcionario_id=f.id)}}" method="post" style="display:inline">
                     <button class="btn btn-danger btn-sm">Deletar</button>

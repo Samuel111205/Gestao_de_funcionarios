@@ -1,7 +1,7 @@
 from app.banco_de_dados import db
 from datetime import date
 
-class Presenca(db.Model):
+class Presencas(db.Model):
     __tablename__ = "presencas"
 
     id = db.Column(db.Integer, primary_key=True)

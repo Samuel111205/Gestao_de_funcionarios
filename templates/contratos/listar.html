@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Contrato de {{funcionario.nome}} {% endblock %}
+{% block conteudo %}
+<form action="{{ url_for('contrato.inserir', funcionario_id=funcionario.id) }}" method="post">
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Tipo de contrato: </label>
+            <input type="text" name="tipo" class="form-control">
+        </div>
+        <div class="col">
+            <label class="form-label">Salario Base: </label>
+            <input type="number" name="salario_base" class="form-control">
+        </div>
+        <div class="col">
+            <label class="form-label">Data de inicio: </label>
+            <input type="date" name="data_inicio" class="form-control" required>
+        </div>
+        <div class="col">
+            <label class="form-label">Data final: </label>
+            <input type="date" name="data_fim" class="form-control" required>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary">
+                Adicionar
+            </button>
+        </div>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <tr>
+        <th>Tipo de contrato</th>
+        <th>Salario Mensal</th>
+        <th>Estado</th>
+    </tr>
+    {% for c in funcionario.contratos %}
+        <tr>
+            <td>{{ c.tipo }}</td>
+            <td>{{ c.salario_base }}</td>
+            <td>
+                {% if c.ativo %}
+                    Ativo
+                {% else %}
+                    Terminado
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

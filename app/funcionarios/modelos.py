@@ -14,11 +14,8 @@ class Funcionarios(db.Model):
     cargo_id=db.Column(db.Integer, db.ForeignKey('cargos.id', ondelete="SET NULL"), nullable=False)
     cargo=db.relationship("Cargos", back_populates="funcionarios", lazy="joined")
 
-    categoria_id=db.Column(db.Integer, db.ForeignKey("categorias.id"), nullable=False)
-    categorias=db.relationship("Categorias")
-
-    salarios = db.relationship("Salarios", backref="funcionario", lazy=True,
-                                   cascade="all, delete-orphan")
+    contratos=db.relationship("Contratos", back_populates="funcionario", lazy=True)
+    presencas=db.relationship("Presencas", back_populates="funcionario", lazy=True)
 
     def __repr__(self):
         return f"<Funcionario id={self.id} nome={self.nome_funcionario}>"

@@ -6,7 +6,6 @@ from app.funcionarios.modelos import Funcionarios
 from app.banco_de_dados import db
 from datetime import datetime
 
-
 @salario_bp.route("/<int:funcionario_id>")
 @login_required
 def listar(funcionario_id):
@@ -23,3 +22,4 @@ def inserir(funcionario_id):
     db.session.add(salario)
     db.session.commit()
     return redirect(url_for("salario.listar", funcionario_id=funcionario_id))
+

@@ -21,13 +21,22 @@ def criar_app(test_config=None):
     def loader_user(user_id):
         return Usuarios.query.get(int(user_id))
 
+    from app.departamentos import modelos
+    from app.cargos import modelos
+    from app.funcionarios import modelos
+    from app.usuarios import modelos
+    from app.contratos import modelos
+    from app.salarios import modelos
+    from app.presencas import modelos
+    from app.auth import modelos
+
+
     from .departamentos import departamento_bp
     from .cargos import cargo_bp
     from .funcionarios import funcionario_bp
     from .home import home_bp
     from .salarios import salario_bp
     from .auth import auth_bp
-    from .categorias import categoria_bp
     from .contratos import contrato_bp
     from .presencas import presenca_bp
 
@@ -38,7 +47,6 @@ def criar_app(test_config=None):
     app.register_blueprint(cargo_bp, url_prefix="/cargos")
     app.register_blueprint(funcionario_bp, url_prefix="/funcionarios")
     app.register_blueprint(salario_bp, url_prefix="/salarios")
-    app.register_blueprint(categoria_bp, url_prefix="/categorias")
     app.register_blueprint(contrato_bp, url_prefix="/contratos")
     app.register_blueprint(presenca_bp, url_prefix="/presencas")
 
