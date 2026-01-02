@@ -1,40 +1,111 @@
 {% extends "base.html" %}
-{% block title %} Cadastrar funcionario {% endblock %}
+{% block title %}Cadastrar funcionário{% endblock %}
 {% block conteudo %}
-<h2>Cadastrar funcionario</h2>
-<form action="{{ url_for('funcionario.inserir_funcionario')}}" method="post" class="mt-3">
-    <div class="mb-3">
-        <label class="form-label">Nome: </label>
-        <input type="text" name="nome" class="form-control" required>
+<!-- Estilos inline mínimos (opção: mover para static/css/funcionarios.css) -->
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/funcionarios.css') }}">-->
+<style>
+/* Pequeno fallback caso o CSS externo não esteja carregado; recomendo usar o arquivo static/css/funcionarios.css */
+.form-container {
+  max-width: 720px;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 680px) {
+  .form-row--two {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+.form-help {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+</style>
+
+<div class="form-container">
+  <h2>Cadastrar funcionário</h2>
+
+  <form action="{{ url_for('funcionario.inserir_funcionario') }}" method="post" class="mt-3" novalidate>
+    <div class="form-row form-row--two mb-3">
+      <div>
+        <label for="nome" class="form-label">Nome</label>
+        <input id="nome" type="text" name="nome" class="form-control" required
+               value="{{ request.form.get('nome', '') }}">
+      </div>
+
+      <div>
+        <label for="data_nascimento" class="form-label">Data de nascimento</label>
+        <input id="data_nascimento" type="date" name="data_nascimento" class="form-control" required
+               value="{{ request.form.get('data_nascimento', '') }}">
+      </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Data nascimento: </label>
-        <input type="date" name="data_nascimento" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Genero: </label>
-        <input type="text" name="genero" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Estado civil: </label>
-        <input type="text" name="estado_civil" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Email: </label>
-        <input type="email" name="email" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Telefone: </label>
-        <input type="text" name="telefone" class="form-control" required>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Cargo: </label>
-        <select class="form-select" name="cargo_id" required>
-            {% for cargo in cargos %}
-            <option value="{{ cargo.id }}">{{ cargo.nome_cargo }}</option>
-            {% endfor %}
+
+    <div class="form-row form-row--two mb-3">
+      <div>
+        <label for="genero" class="form-label">Gênero</label>
+        <select id="genero" name="genero" class="form-select" required>
+          <option value="">Selecione...</option>
+          <option value="Masculino" {% if request.form.get('genero') == 'Masculino' %}selected{% endif %}>Masculino</option>
+          <option value="Feminino" {% if request.form.get('genero') == 'Feminino' %}selected{% endif %}>Feminino</option>
+          <option value="Outro" {% if request.form.get('genero') == 'Outro' %}selected{% endif %}>Outro</option>
         </select>
+      </div>
+
+      <div>
+        <label for="estado_civil" class="form-label">Estado civil</label>
+        <input id="estado_civil" type="text" name="estado_civil" class="form-control" required
+               value="{{ request.form.get('estado_civil', '') }}">
+      </div>
     </div>
-    <button class="btn btn-primary">Cadastrar</button>
-</form>
+
+    <div class="form-row mb-3">
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input id="email" type="email" name="email" class="form-control" required
+               value="{{ request.form.get('email', '') }}">
+        <div id="emailHelp" class="form-help">Informe um email válido (ex.: nome@exemplo.com)</div>
+      </div>
+    </div>
+
+    <div class="form-row mb-3">
+      <div>
+        <label for="telefone" class="form-label">Telefone</label>
+        <input id="telefone" type="tel" name="telefone" class="form-control" required
+               inputmode="tel" pattern="[\d\+\-\s\(\)]{6,20}"
+               value="{{ request.form.get('telefone', '') }}">
+        <div class="form-help">Somente números e os símbolos + - () espaço. Mínimo 6 caracteres.</div>
+      </div>
+    </div>
+
+    <div class="form-row mb-3">
+      <label for="cargo_id" class="form-label">Cargo</label>
+      <select id="cargo_id" class="form-select" name="cargo_id" required>
+        <option value="">Selecione um cargo...</option>
+        {% for cargo in cargos %}
+        <option value="{{ cargo.id }}" {% if request.form.get('cargo_id') == (cargo.id|string) %}selected{% endif %}>{{ cargo.nome_cargo }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <a href="{{ url_for('funcionario.listar_funcionarios') }}" class="btn btn-secondary">Cancelar</a>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+  </form>
+</div>
 {% endblock %}

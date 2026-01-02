@@ -1,34 +1,64 @@
 {% extends "base.html" %}
-{% block title %}Salarios{% endblock %}
+{% block title %}Salários{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/salarios.css') }}">
+{% endblock %}
+
 {% block conteudo %}
-<h3>Salarios de {{ funcionario.nome_funcionario }}</h3>
-<form action="{{ url_for('salario.inserir', funcionario_id=funcionario.id) }}" method="post">
-    <div class="row mb-3">
-        <div class="col">
-            <input type="number" step="0.01" name="valor" class="form-control" placeholder="valor" required>
+<h3 class="mb-3">Salários de {{ funcionario.nome_funcionario }}</h3>
+
+<form class="salarios-form mb-4" action="{{ url_for('salario.inserir', funcionario_id=funcionario.id) }}" method="post" novalidate>
+    <div class="row g-2 align-items-end">
+        <div class="col-md-4 col-sm-6">
+            <label for="valor" class="form-label visually-hidden">Valor</label>
+            <input id="valor" type="number" step="0.01" min="0" name="valor" class="form-control" placeholder="Valor (ex: 1234.56)" required inputmode="decimal" aria-label="Valor">
         </div>
-        <div class="col">
-            <input type="date" name="data_inicio" class="form-control" required>
+        <div class="col-md-4 col-sm-6">
+            <label for="data_inicio" class="form-label visually-hidden">Data início</label>
+            <input id="data_inicio" type="date" name="data_inicio" class="form-control" required aria-label="Data de início">
         </div>
-        <div class="col">
-            <button class="btn btn-primary">Adicionar</button>
+        <div class="col-md-4 col-sm-12">
+            <button type="submit" class="btn btn-primary w-100">Adicionar</button>
         </div>
     </div>
 </form>
-<table class="table table-bordered">
-    <thead>
+
+<table class="table table-bordered table-striped salarios-table">
+    <thead class="table-light">
         <tr>
-            <th>Valor</th>
-            <th>Data inicio</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Data início</th>
         </tr>
     </thead>
     <tbody>
-        {% for s in funcionario.salarios %}
+        {% if funcionario.salarios|length == 0 %}
         <tr>
-                <td>{{ s.valor }}</td>
-                <td>{{ s.data_incio }}</td>
+            <td colspan="2" class="no-data">Nenhum salário cadastrado.</td>
         </tr>
-        {% endfor %}
+        {% else %}
+            {% for s in funcionario.salarios %}
+            <tr>
+                <td>
+                    {# Formata o valor como moeda. Ajuste conforme o tipo (Decimal/float). #}
+                    {{ "R$ {:.2f}".format(s.valor) }}
+                </td>
+                <td>
+                    {# Corrigido typo: data_inicio (antes estava data_incio).
+                       Se for objeto date/datetime, formata para dd/mm/aaaa #}
+                    {% if s.data_inicio is not none %}
+                        {% if s.data_inicio.strftime is defined %}
+                            {{ s.data_inicio.strftime('%d/%m/%Y') }}
+                        {% else %}
+                            {{ s.data_inicio }}
+                        {% endif %}
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        {% endif %}
     </tbody>
 </table>
 {% endblock %}

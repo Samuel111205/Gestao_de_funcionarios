@@ -1,0 +1,119 @@
+:root{
+  --bg-hero: linear-gradient(135deg,#f8fbff 0%, #eef6ff 100%);
+  --accent: #0d6efd;
+  --muted: #6c757d;
+  --card-bg: #ffffff;
+  --max-width: 1100px;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(33,37,41,0.06);
+  --shadow-strong: 0 12px 30px rgba(33,37,41,0.09);
+}
+
+/* Page container override if needed */
+.container {
+  max-width: var(--max-width);
+}
+
+/* HERO */
+.hero {
+  background: var(--bg-hero);
+  border-radius: 14px;
+  padding: 2.25rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 64ch;
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #0b2a4a;
+}
+
+.hero-subtitle {
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+/* CTA */
+.btn-cta {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 0.65rem 1.15rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.12);
+  transition: transform .14s ease, box-shadow .14s ease;
+  text-decoration: none;
+}
+.btn-cta:hover,
+.btn-cta:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Atalhos / cards */
+.inicio-section .section-title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inicio-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* If using Bootstrap grid, the .col-* classes will handle layout; keep card styling generic */
+.inicio-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  min-height: 100px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(33,37,41,0.04);
+  transition: transform .14s ease, box-shadow .14s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inicio-card:hover,
+.inicio-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-strong);
+  outline: none;
+}
+
+/* Card title */
+.card-title {
+  margin-bottom: 0.35rem;
+  color: #12233a;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .inicio-cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 575.98px) {
+  .inicio-cards { grid-template-columns: 1fr; }
+  .hero { padding: 1.5rem; }
+  .hero-inner { max-width: 100%; }
+}
+
+/* Focus visible for accessibility */
+a:focus-visible, button:focus-visible, .inicio-card:focus-within {
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.12);
+  outline: none;
+}

@@ -180,3 +180,6 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 /modelos
+templates/index.html
+templates/index.html
+templates/lista.html

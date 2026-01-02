@@ -5,33 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e72b282-049f-4d43-a535-23ab94c07d47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/auth/criar_permissao.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/auth/modelos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/folhas/rotas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/folhas/servicos.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/usuarios/rotas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/logs/listar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/presencas/listar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/salarios/calculo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/usuarios/cadastrar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/usuarios/editar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/usuarios/listar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/auth/tabelas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/funcionarios.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/inicio.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/salarios" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/salarios.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/criar_permissao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/criar_permissao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/modelos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/rotas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/categorias/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/categorias/modelos.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/categorias/rotas.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contratos/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/contratos/modelos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/contratos/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/contratos/rotas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/funcionarios/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/funcionarios/modelos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/folhas/servicos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/folhas/servicos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/funcionarios/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/funcionarios/rotas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/presencas/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/presencas/modelos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/presencas/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/presencas/rotas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/salarios/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/salarios/modelos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/salarios/rotas.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/salarios/rotas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/salarios/servicos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/salarios/servicos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/usuarios/modelos.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/usuarios/modelos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/criar_usuario.py" beforeDir="false" afterPath="$PROJECT_DIR$/criar_usuario.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/__init__.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/criar_tabelas.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modelos/cargos.py" beforeDir="false" />
@@ -44,16 +37,18 @@
       <change beforePath="$PROJECT_DIR$/rotas/departamento.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/funcionario.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rotas/home.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/cadastro.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/static.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cadastrar_departamento.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/categorias/cadastrar.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/categorias/listar.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/editar_funcionario.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/funcionarios/cadastrar_funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/cadastrar_funcionarios.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/funcionarios/listar_funcionarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/funcionarios/listar_funcionarios.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/lista.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/salarios/atualizar_salarios.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contratos/listar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/salarios/listar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/salarios/listar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,26 +78,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.app.executor": "Run",
-    "Python.banco_de_daos.executor": "Run",
-    "Python.cargos.executor": "Run",
-    "Python.criar_permissao.executor": "Run",
-    "Python.criar_tabelas.executor": "Run",
-    "Python.criar_usuario.executor": "Run",
-    "Python.departamentos.executor": "Run",
-    "Python.ex.executor": "Run",
-    "Python.modelos.executor": "Run",
-    "Python.run.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/FRANCISCO MORAIS/Documents/presença.py",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.banco_de_daos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.cargos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.criar_permissao.executor&quot;: &quot;Run&quot;,
+    &quot;Python.criar_tabelas.executor&quot;: &quot;Run&quot;,
+    &quot;Python.criar_usuario.executor&quot;: &quot;Run&quot;,
+    &quot;Python.departamentos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.modelos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/FRANCISCO MORAIS/Downloads/app_auth_rotas.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.run">
+}</component>
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Gestao_de_funcionarios" />
       <option name="ENV_FILES" value="" />

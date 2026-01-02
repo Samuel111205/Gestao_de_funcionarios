@@ -25,10 +25,11 @@ def criar_app(test_config=None):
     from app.cargos import modelos
     from app.funcionarios import modelos
     from app.usuarios import modelos
-    from app.contratos import modelos
     from app.salarios import modelos
     from app.presencas import modelos
     from app.auth import modelos
+    from app.auth import tabelas
+    from app.contratos import modelos
 
 
     from .departamentos import departamento_bp

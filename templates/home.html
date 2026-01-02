@@ -1,39 +1,41 @@
-{% extends "base.html" %}
-{% block title %}Inicio{% endblock %}
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
+{% endblock %}
+
+{% block title %}Início - Gestão{% endblock %}
+
 {% block conteudo %}
-<div class="text-center mb-4">
-    <h1 class="fw-bold">HELLO CÓPIA</h1>
-    <p class="text-secondary">
-        Seja bem-vindo ao site do Hello Cópia, o maior centro de formação do Km 30 e da Comuna dos Ramiros.
-    </p>
-</div>
-<div class="row mb-4">
-
-    <div class="col-md-6 mb-3">
-        <div class="p-4 bg-white rounded shadow-sm">
-            <h3 class="fw-semibold">Formação de Qualidade</h3>
-            <p>
-                Disponibilizamos cursos de alta qualidade para impulsionar o seu conhecimento e
-                preparar você para o sucesso.
-            </p>
+<main id="main-content" role="main" class="container py-4">
+    <section class="hero d-flex align-items-center" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+            <h1 id="hero-heading" class="hero-title">Bem-vindo ao sistema de Gestão</h1>
+            <p class="hero-subtitle">Gerencie departamentos, cargos e funcionários de forma simples e rápida.</p>
+            <div class="hero-cta">
+                <a href="{{ url_for('funcionario.listar_funcionarios') }}" class="btn btn-lg btn-cta" aria-label="Ver lista de funcionários">Ver Funcionários</a>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="col-md-6 mb-3">
-        <div class="p-4 bg-white rounded shadow-sm">
-            <h3 class="fw-semibold">Foco no Mercado de Trabalho</h3>
-            <p>
-                Preparamos você para o mercado de trabalho de forma rápida, prática e orientada
-                às competências essenciais da atualidade.
-            </p>
+    <section class="inicio-section mt-5" aria-labelledby="atalhos-heading">
+        <h2 id="atalhos-heading" class="section-title">Atalhos</h2>
+        <div class="inicio-cards row g-3" role="list">
+            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="dpt-title">
+                <h3 id="dpt-title" class="card-title h6">Departamentos</h3>
+                <p class="mb-0">Visualize e gerencie os departamentos da empresa.</p>
+            </article>
+
+            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="cargo-title">
+                <h3 id="cargo-title" class="card-title h6">Cargos</h3>
+                <p class="mb-0">Cadastre e edite cargos.</p>
+            </article>
+
+            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="func-title">
+                <h3 id="func-title" class="card-title h6">Funcionários</h3>
+                <p class="mb-0">Lista completa dos funcionários.</p>
+            </article>
         </div>
-    </div>
-
-</div>
-
-<div class="text-center mt-4">
-    <h5 class="text-muted">
-        Desenvolvido por: Samuel Morais & Antonio Adolfo
-    </h5>
-</div>
+    </section>
+</main>
 {% endblock %}
