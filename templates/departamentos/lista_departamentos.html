@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Departamentos{% endblock %}
-{% block conteudo %}
+{% block content %}
 <h2>Departamentos</h2>
 <a href="{{ url_for('departamento.cadastrar_departamentos')}}" class="nb-3">
     Novo departamento
@@ -10,6 +10,7 @@
         <tr>
             <th>ID</th>
             <th>Departamento</th>
+            <th>Status</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -19,9 +20,22 @@
             <td>{{ dep.id }}</td>
             <td>{{ dep.nome_departamento }}</td>
             <td>
-                <form action="{{ url_for('departamento.deletar_departamento', departamento_id=dep.id)}}" method="post">
-                    <button class="btn btn-danger btn-sm">Deletar</button>
-                </form>
+                {% if dep.ativo %}
+                    Ativo
+                {% else %}
+                    Inativo
+                {% endif %}
+            </td>
+            <td>
+                {% if dep.ativo %}
+                    <a href="{{ url_for('departamento.desativar_departamento', departamento_id=dep.id ) }}">
+                        Desativar
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('departamento.ativar_departamento', departamento_id=dep.id) }}">
+                        Ativar
+                    </a>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

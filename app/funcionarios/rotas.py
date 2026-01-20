@@ -1,25 +1,31 @@
 from flask import render_template, request, redirect, url_for
 from . import funcionario_bp
-from .modelos import Funcionarios
+from .modelos import Funcionarios 
 from app.banco_de_dados import db
 from app.cargos.modelos import Cargos
 from datetime import datetime
-from flask_login import login_required
+from flask_login import login_required, current_user
+from app.auth.permissoes import permissao_requerida
 
 
 # Listar todos os funcionarios em ordem alfabetica
 @funcionario_bp.route("/")
 @login_required
 def listar_funcionarios():
-    page = request.args.get('page', 1, type=int)  # Cria pagina no html
-    funcionarios = Funcionarios.query.order_by(Funcionarios.nome_funcionario).paginate(page=page, per_page=10)
-    return render_template("funcionarios/listar_funcionarios.html", funcionarios=funcionarios)
+    termo=request.args.get("q", "").strip().title()
+    if termo:
+        funcionarios=Funcionarios.query.filter(
+            Funcionarios.nome_funcionario.ilike(f"%{termo}%")
+        ).all()
+    else:
+        funcionarios = Funcionarios.query.order_by(Funcionarios.nome_funcionario).all()
+    return render_template("funcionarios/listar_funcionarios.html", funcionarios=funcionarios,termo=termo)
 
 
 @funcionario_bp.route("/cadastrar")
 @login_required
 def cadastrar_funcionario():
-    cargos = Cargos.query.order_by(Cargos.nome_cargo).all()
+    cargos = Cargos.query.filter_by(ativo=True).order_by(Cargos.nome_cargo).all()
     return render_template("funcionarios/cadastrar_funcionarios.html", cargos=cargos)
 
 
@@ -63,7 +69,7 @@ def inserir_funcionario():
         data_nascimento=data_nascimento,
         genero=genero,
         estado_civil=estado_civil,
-        email=email,
+        email=email or None,
         telefone=telefone,
         cargo_id=cargo_id,
     )
@@ -124,7 +130,7 @@ def atualizar_funcionario(funcionario_id):
     return redirect(url_for(f"{funcionario_bp.name}.listar_funcionarios"))
 
 
-@funcionario_bp.route("/deletar/<int:funcionario_id>", methods=["POST"])
+@funcionario_bp.route("/deletar/<int:funcionario_id>")
 @login_required
 def deletar_funcionario(funcionario_id):
     funcionario = Funcionarios.query.get_or_404(funcionario_id)
@@ -133,7 +139,7 @@ def deletar_funcionario(funcionario_id):
     return redirect(url_for(f"{funcionario_bp.name}.listar_funcionarios"))
 
 
-@funcionario_bp.route("/verdados/<int:funcionario_id>", methods=["GET"])
+@funcionario_bp.route("/verdados/<int:funcionario_id>")
 @login_required
 def ver_dados_do_funcionario(funcionario_id):
     funcionario = Funcionarios.query.get_or_404(funcionario_id)

@@ -1,18 +1,20 @@
 from app.banco_de_dados import db
-
+from datetime import date
 
 class Salarios(db.Model):
     __tablename__="salarios"
     id=db.Column(db.Integer, primary_key=True)
     contrato_id=db.Column(db.Integer, db.ForeignKey("contratos.id"), nullable=False)
-    mes=db.Column(db.Integer, nullable=False)
-    ano=db.Column(db.Integer, nullable=False)
-    faltas=db.Column(db.Integer, default=0)
-    dias_trabalhadas=db.Column(db.Integer, default=0)
-    descontos=db.Column(db.Float, default=0)
-    acrescimos=db.Column(db.Float, default=0)
-    salario_base=db.Column(db.Float, nullable=False)
-    valor_final=db.Column(db.Float, nullable=False)
-    contrato=db.relationship("Contratos", back_populates="salarios")
+    valor=db.Column(db.Float, nullable=False)
+    data_inicio=db.Column(db.Date, nullable=False, default=date.today)
+    data_fim=db.Column(db.Date)
+    ativo=db.Column(db.Boolean, default=True)
+    contrato=db.relationship("Contratos", back_populates="salarios", lazy=True)
 
-    __table_args__=(db.UniqueConstraint("contrato_id", "mes", "ano"),)
+    def encerrar(self, data_encerramento=None):
+        self.ativo=False
+        self.data_fim=data_encerramento or date.today()
+
+    def __repr__(self):
+        status="ativo" if self.ativo else "encerrado"
+        return f"<Salario {self.valor} ({status})"

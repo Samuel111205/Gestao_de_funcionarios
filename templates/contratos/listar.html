@@ -1,47 +1,39 @@
 {% extends "base.html" %}
-{% block title %}Contrato de {{funcionario.nome}} {% endblock %}
-{% block conteudo %}
-<form action="{{ url_for('contrato.inserir', funcionario_id=funcionario.id) }}" method="post">
-    <div class="row mb-3">
-        <div class="col">
-            <label class="form-label">Tipo de contrato: </label>
-            <input type="text" name="tipo" class="form-control">
-        </div>
-        <div class="col">
-            <label class="form-label">Salario Base: </label>
-            <input type="number" name="salario_base" class="form-control">
-        </div>
-        <div class="col">
-            <label class="form-label">Data de inicio: </label>
-            <input type="date" name="data_inicio" class="form-control" required>
-        </div>
-        <div class="col">
-            <label class="form-label">Data final: </label>
-            <input type="date" name="data_fim" class="form-control" required>
-        </div>
-        <div class="col">
-            <button class="btn btn-primary">
-                Adicionar
-            </button>
-        </div>
-    </div>
-</form>
+{% block title %}Contrato{% endblock %}
+{% block content %}
+<h1>Contratos</h1>
+
+<a href="{{ url_for('contrato.cadastrar_contratos')}}" class="btn-primary">+ Novo Contrato</a>
 
 <table class="table table-striped">
+    
     <tr>
-        <th>Tipo de contrato</th>
-        <th>Salario Mensal</th>
-        <th>Estado</th>
+        <th>Funcionario</th>
+        <th>Tipo</th>
+        <td><strong>Data Inicio</strong></td>
+        <th>Status</th>
+        <th>Ações</th>
     </tr>
-    {% for c in funcionario.contratos %}
+    {% for c in contratos %}
         <tr>
+            <td>{{ c.funcionario.nome_funcionario }}</td>
             <td>{{ c.tipo }}</td>
-            <td>{{ c.salario_base }}</td>
+            <td>{{ c.data_inicio }}</td>
             <td>
                 {% if c.ativo %}
                     Ativo
                 {% else %}
-                    Terminado
+                    Encerrado
+                {% endif %}
+            </td>
+            <td>
+                <a href="{{ url_for('presenca.listar_presencas', contrato_id=c.id) }}">
+                    Presencas
+                </a>
+                {% if c.ativo %}
+                    |<a href="{{ url_for('contrato.encerrar_contrato', funcionario_id=c.id)}}">
+                        Encerrar
+                    </a>
                 {% endif %}
             </td>
         </tr>

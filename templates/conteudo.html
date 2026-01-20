@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Copia</title>
+    <style>
+        @font-face {
+            font-family: 'Biryani';
+            src: url('../static/fontes/Biryani-Black.ttf')format('ttf'), url('/static/fontes/Biryani-Bold.ttf'), format('ttf');
+            font-weight: normal;
+            font-size: normal;
+        }
+        @font-face {
+            font-family: 'Noto';
+            src: url('/static/fontes/NotoSans-VariableFont_wdth\,wght.ttf') format('ttf'), url('/static/fontes/NotoSans-Italic-VariableFont_wdth\,wght.ttf') format('ttf');
+        }
+        :root{
+            /*  cores 1 */
+            --cor1: #BF0F1E;
+            --cor2: #c0b6b6;
+            --cor3: #BE84BF;
+            --cor4: #A62E86;
+            --cor5: #8C1440;
+                /* cores 2  */
+            --cor6: #4A1472;
+            --cor7: #f7170fc9;
+            --cor8: #194977 ;
+            --cor9: #130950;
+            --cor10: #350FA3;
+                /*  cores 3 */
+            --cor11: #2C3597;
+            --cor12: #e7080f;
+            --cor13: #5D2A7D;
+            --cor14: #B93688;
+            --cor15: #841037;
+            --fonte_padrao: 'Noto';
+            --fonte_destaque: 'Biryani';
+        }
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+            background-color: var(--cor2);
+            font-family:  var(--fonte_padrao);
+        }
+        header{
+            background-image: linear-gradient(to bottom, var(--cor1), var(--cor9));
+            font-family: var(--fonte_destaque);
+            color: var(--cor2);
+            min-height: 150px;
+            text-align: center;
+            padding-top: 40px;
+        
+        }
+        h1{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.692);
+
+        }
+        h2{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-shadow: 2px 3px 0px rgba(0, 0, 0, 0.692);
+        }
+
+        main p{
+            margin: 15px 0px;
+            text-align: justify;
+            text-indent: 30px;
+            font-size: 1em;
+            line-height: 1.5em;
+            
+        }
+        header>p{
+            text-align: center;
+            max-width: 500px;
+            margin: auto;
+            text-shadow: 2px 3px 0px rgba(5, 5, 5, 0.589);
+
+        }
+        nav{
+            background-color: var(--cor9);
+            box-shadow: 0px 7px 7px black;
+            font-family: var(--fonte_destaque);
+            
+        }
+        nav>a{
+            color: var(--cor2);
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition-duration: .5s;
+        }
+        nav a:hover{
+            background-color: var(--cor9);
+        }
+        main{
+            min-width: 300px;
+            max-width: 1000px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px var(--cor13);
+            margin-bottom: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            font-family: var(--fonte_padrao);
+        }
+        aside{
+            background-color: #14095c80;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        aside h3{
+            background-image: linear-gradient(to right, var(--cor7));
+            text-align: center;
+            color: var(--cor2);
+            margin: -10px -10px 0px -10px;
+            border-radius: 10px 10px 0px 0px;
+            
+        }
+        aside > ul{
+            list-style-type: '\2714\00A0\00A0';
+            list-style-position: inside;
+            columns: 2;
+            margin-bottom: 20px;
+        }
+        aside p{
+            background-image: linear-gradient(to bottom, var(--cor7), transparent);
+            font-weight: bold;
+            text-align: center;
+        }
+        aside > ol{
+            text-align: center;
+            list-style-position: inside;
+        }
+        footer{
+            background-color: var(--cor9);
+            color: var(--cor2);
+            text-align: center;
+            padding: 5px;
+            font-size: 1em;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1> Hello-Copia</h1>
+        <p>Rigor, Qualidade e Responsablidade na formação</p>
+        <h2>Centro de formação profissional</h2>
+    </header>
+    <nav>
+        <a href="#">Tabela de Preços</a>
+        <a href="#">Inscrever-se</a>
+        <a href="{{ url_for('home.home')}}">Home</a>
+    </nav>
+    <main>
+        <article>
+            <p>Benvindo ao Hello-Copia o maior centro de formação do km30 dos Ramiros. Formamos jovens rumo ao sucesso. Inscrição: 3500kz</p>
+            <p>PERIODO: Manha| Tarde E Noite</p>
+            <picture>
+               <img src="" alt="">
+            </picture>
+            <aside>
+                <h3>Nossos Cursos: </h3>
+                <ul>
+                    <li>Informatica</li>
+                    <li>Excel avançado</li>
+                    <li>Frio e climatização</li>
+                    <li>Eletrecidade</li>
+                    <li>Decoração</li>
+                    <li>Pastelaria</li>
+                    <li>Culinaria</li>
+                    <li>Operador de caixa</li>
+                    <li>Designer Grafíco</li>
+                    <li>Pedagogia</li>
+                    <li>Atendimento ao público</li>
+                    <li>Secretariado</li>
+                    <li>Manicure e Pedicure</li>
+                    <li>Montagem de parabolica</li>
+                    <li>Make-UP</li>
+                </ul>
+                <h3>Cursos de inglês Niveis:</h3>
+                <p>Nivel basico</p>
+                <ol >
+                    <li>Iniciante(Beginner)</li>
+                    <li>Elemente/ pre-elementer</li>
+                </ol>
+                <p>Nivel Intermediario</p>
+                <ol>
+                    <li>Intermediario</li>
+                    <li>Intermediario avançado</li>
+                <ol>
+                <p>Nivel avançado</p>
+                <ol>
+                    <li>Avaçado (Advanced)</li>
+                    <li>Proficiência</li>
+                <ol>
+            </aside>
+            <p>
+                <small>Hello-Copia Sede: km30 de Ramiros</small>
+                <small class="endereco">Whatsapp: 924516468/953439983</small>
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>Site criado pela empresa conect-servers nas mãos do CEO: António Morais</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+:root{
+  --bg-hero: linear-gradient(135deg,hsla(231, 90hsl(212, 92%, 24%) 0.877) 0hsl(212, 82%, 33%)6ff 100%);
+  --accent: hsla(216, 91%, 31%, 0.781);
+  --muted: hsla(221, 91%, 37%, 0.849);
+  --card-bg: hsla(0, 93%, 45%, 0.945);
+  --max-width: 1100px;
+  --radius: 12px;
+  --shadow: 0 6px 18px hsla(210, 86%, 41%, 0.918)
+  --shadow-strong: 0 12px 30px rgba(33,37,41,0.09);
+  /*  cores 1 */
+  --cor1: #BF0F1E;
+  --cor2: #F2F2F2;
+  --cor3: #BE84BF;
+  --cor4: #A62E86;
+  --cor5: #8C1440;
+  /* cores 2  */
+  --cor6: #4A1472;
+  --cor7: #F7170F;
+  --cor8: #194977 ;
+  --cor9: #130950;
+  --cor10: #350FA3;
+  /*  cores 3 */
+  --cor11: #2C3597;
+  --cor12: #C40D12;
+  --cor13: #5D2A7D;
+  --cor14: #B93688;
+  --cor15: #841037;
+}
+.biryani-extralight {
+  font-family: "Biryani", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.biryani-light {
+  font-family: "Biryani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.biryani-regular {
+  font-family: "Biryani", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.biryani-semibold {
+  font-family: "Biryani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.biryani-bold {
+  font-family: "Biryani", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.biryani-extrabold {
+  font-family: "Biryani", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.biryani-black {
+  font-family: "Biryani", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  margin-bottom: 8px;
+}
+.card{
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+.search-area{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.tabela{
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+.tabela th, .tabela td{
+  padding: 12px;
+  border-bottom: 1px solid#eeeeee;
+}
+.status.ativo{
+  color: green;
+  font-weight: bold;
+}
+.status.ferias{
+  color: blue;
+}

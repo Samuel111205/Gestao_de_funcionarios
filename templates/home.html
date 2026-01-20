@@ -1,41 +1,108 @@
-{% extends 'base.html' %}
 
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
-{% endblock %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&display=swap');
 
-{% block title %}Início - Gestão{% endblock %}
+    @font-face {
+        font-family: 'Biryani';
+        src: url('fontes/Biryani-Black.ttf')format('ttf'), url('fontes/Biryani-Bold.ttf'), format('ttf');
+        font-weight: normal;
+        font-size: normal;
+    }
+            :root{
+            /*  cores 1 */
+            --cor1: #BF0F1E;
+            --cor2: #c0b6b6;
+            --cor3: #BE84BF;
+            --cor4: #A62E86;
+            --cor5: #8C1440;
+                /* cores 2  */
+            --cor6: #4A1472;
+            --cor7: #f7170fc9;
+            --cor8: #194977 ;
+            --cor9: #130950;
+            --cor10: #350FA3;
+                /*  cores 3 */
+            --cor11: #2C3597;
+            --cor12: #e7080f;
+            --cor13: #5D2A7D;
+            --cor14: #B93688;
+            --cor15: #841037;
+            --fonte_padrao: 'Noto';
+            --fonte_destaque: 'Biryani';
+        }
+        body{
+            margin: 0%;
+            font-family:'Biryani' Arial, Helvetica, sans-serif;
+            background-color:  #14095c80;
+        }
+        .home{
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            background-color: #14095c80;
+            border-bottom: 1px solid#ddd;
+            text-align: center;
+            background-image: linear-gradient(to bottom, var(--cor1), var(--cor9));
+        }
 
-{% block conteudo %}
-<main id="main-content" role="main" class="container py-4">
-    <section class="hero d-flex align-items-center" aria-labelledby="hero-heading">
-        <div class="hero-inner">
-            <h1 id="hero-heading" class="hero-title">Bem-vindo ao sistema de Gestão</h1>
-            <p class="hero-subtitle">Gerencie departamentos, cargos e funcionários de forma simples e rápida.</p>
-            <div class="hero-cta">
-                <a href="{{ url_for('funcionario.listar_funcionarios') }}" class="btn btn-lg btn-cta" aria-label="Ver lista de funcionários">Ver Funcionários</a>
-            </div>
-        </div>
-    </section>
+        .menu a{
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--cor2);
+            text-align: right;
 
-    <section class="inicio-section mt-5" aria-labelledby="atalhos-heading">
-        <h2 id="atalhos-heading" class="section-title">Atalhos</h2>
-        <div class="inicio-cards row g-3" role="list">
-            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="dpt-title">
-                <h3 id="dpt-title" class="card-title h6">Departamentos</h3>
-                <p class="mb-0">Visualize e gerencie os departamentos da empresa.</p>
-            </article>
+        }
+        .container{
+            padding: 30px;
+        }
+        .logo{
+            color: var(--cor2);
+            font-family: 'Biryani', Arial, Helvetica, sans-serif;
+        }
+        .user-name{
+            color: var(--cor2);
+        }
+        .nav-link{
+            color: var(--cor2);
+        }
+</style>
+<header class="home">
+    <div class="logo">
+        Gestão de Funcionarios
+    </div> 
+    <nav class="menu">
+        <a href="{{ url_for('home.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('funcionario.listar_funcionarios') }}">Funcionarios</a>
+        <a href="{{ url_for('departamento.listar_departamento') }}">Departamentos</a>
+        <a href="{{ url_for('cargos.listar_cargo') }}">Cargos</a>
+        <a href="#">Relatorios</a>
+        <a href="{{ url_for('contrato.listar_contratos') }}">Contratos</a>
+        <a href="{{ url_for('home.conteudo') }}">Inicio</a>
+    </nav>
+    <div class="user-area">
+        <span class="notification"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg> 
+        </span>
+        <span class="user-name">        
+            {% if current_user.is_authenticated %}
+            <span class="nav-link">
+                {{ current_user.nome }}
+            </span>
+                <a class="nav-link" href="{{ url_for('usuarios.logout') }}">
+                    Logout
+                </a>
+            {% else %}
+                <a class="nav-link" href="{{ url_for('usuarios.login') }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4M4.5 7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11.5 7zM8 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
+                </a>
+            {% endif %} 
+        </span>
 
-            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="cargo-title">
-                <h3 id="cargo-title" class="card-title h6">Cargos</h3>
-                <p class="mb-0">Cadastre e edite cargos.</p>
-            </article>
+    </div>
+</header>
 
-            <article class="card inicio-card col-12 col-md-4 p-3" role="listitem" aria-labelledby="func-title">
-                <h3 id="func-title" class="card-title h6">Funcionários</h3>
-                <p class="mb-0">Lista completa dos funcionários.</p>
-            </article>
-        </div>
-    </section>
-</main>
-{% endblock %}

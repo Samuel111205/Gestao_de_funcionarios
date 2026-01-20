@@ -1,9 +1,10 @@
-from flask import request, render_template, redirect, url_for
+from flask import request, render_template, redirect, url_for, flash
 from . import departamento_bp
 from .modelos import Departamentos
 from app.banco_de_dados import db
 from flask_login import login_required
-from app.auth.permissoes import administrador_required
+from app.auth.permissoes import permissao_requerida
+
 
 # Rota que Lista todos os departamentos
 @departamento_bp.route("/")
@@ -25,20 +26,33 @@ def cadastrar_departamentos():
 def inserir_departamento():
     nome_departamento=request.form.get("nome_departamento").strip().title()
     if not nome_departamento:
-        return "Preencha o nome do departamento",400
+        flash("Informe o nome do departamento.", "erro")
+        return redirect(url_for("departamentos.cadastrar_departamento"))
     if Departamentos.query.filter_by(nome_departamento=nome_departamento).first():
-        return "Departamento ja existe"
+        flash("Departamento ja existe", "sucesso")
+        return redirect(url_for("departamentos.cadastrar_departamento"))
 
     departamento=Departamentos(nome_departamento=nome_departamento)
     db.session.add(departamento)
     db.session.commit()
+    flash("Departamento criado com sucesso", "sucesso")
     return redirect(url_for("departamento.listar_departamento"))
 
 #Rota que deleta um cargo no banco de dados
-@departamento_bp.route("/deletar/<int:departamento_id>", methods=["POST"])
+@departamento_bp.route("/<int:departamento_id>/ativar")
 @login_required
-def deletar_departamento(departamento_id):
+def ativar_departamento(departamento_id):
     departamento=Departamentos.query.get_or_404(departamento_id)
-    db.session.delete(departamento)
+    departamento.ativo=True
     db.session.commit()
+    flash("Departamento ativado com sucesso.", "sucesso")
+    return redirect(url_for("departamento.listar_departamento"))
+
+@departamento_bp.route("/<int:departamento_id>/desativar")
+@login_required
+def desativar_departamento(departamento_id):
+    departamento=Departamentos.query.get_or_404(departamento_id)
+    departamento.ativo=False
+    db.session.commit()
+    flash("Departamento desativado com sucesso.", "sucesso")
     return redirect(url_for("departamento.listar_departamento"))

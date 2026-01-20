@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Editar Funcionarios {% endblock %}
-{% block conteudo %}
+{% block content %}
 
 <h2>Editar Funcionario</h2>
 <form action="{{ url_for('funcionario.atualizar_funcionario', funcionario_id=funcionario.id)}}" method="post" class="mt-3">

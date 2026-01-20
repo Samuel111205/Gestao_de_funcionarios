@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} Cargos {% endblock %}
 
-{% block conteudo %}
+{% block content %}
 <h2>Cargos</h2>
 <a href="{{ url_for('cargos.cadastrar_cargo') }}" class="btn btn-sucess mt-3">
     Novo cargo
@@ -12,6 +12,7 @@
             <th>Id</th>
             <th>Cargo</th>
             <th>Departamento</th>
+            <th>Status</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -22,9 +23,22 @@
                 <td>{{ cargo.nome_cargo }}</td>
                 <td>{{ cargo.departamento.nome_departamento }}</td>
                 <td>
-                    <form action="{{ url_for('cargos.deletar_cargo', cargo_id=cargo.id) }}" method="post">
-                        <button class="btn btn-danger btn-sm">Deletar</button>
-                    </form>
+                    {% if cargo.ativo %}
+                        Ativo 
+                    {% else %}
+                        Inativo
+                    {% endif %}
+                </td>
+                <td>
+                    {% if cargo.ativo %}
+                        <a href="{{ url_for('cargos.desativar_cargo', cargo_id=cargo.id) }}">
+                            Desativar
+                        </a>
+                    {% else %}
+                        <a href="{{ url_for('cargos.ativar_cargo', cargo_id=cargo.id) }}">
+                            Ativar
+                        </a>
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}

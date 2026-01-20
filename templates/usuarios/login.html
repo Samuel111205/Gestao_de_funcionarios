@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<style>
+/* Pequeno fallback caso o CSS externo não esteja carregado; recomendo usar o arquivo static/css/funcionarios.css */
+@font-face {
+    font-family: 'Biryani';
+    src: url('../static/fontes/Biryani-Black.ttf')format('ttf'), url('/static/fontes/Biryani-Bold.ttf'), format('ttf');
+    font-weight: normal;
+    font-size: normal;
+}
+@font-face {
+    font-family: 'Noto';
+    src: url('/static/fontes/NotoSans-VariableFont_wdth\,wght.ttf') format('ttf'), url('/static/fontes/NotoSans-Italic-VariableFont_wdth\,wght.ttf') format('ttf');
+}
+:root{
+    /*  cores 1 */
+    --cor1: #BF0F1E;
+    --cor2: #c0b6b6;
+    --cor3: #BE84BF;
+    --cor4: #A62E86;
+    --cor5: #8C1440;
+        /* cores 2  */
+    --cor6: #4A1472;
+    --cor7: #f7170fc9;
+    --cor8: #194977 ;
+    --cor9: #130950;
+    --cor10: #350FA3;
+        /*  cores 3 */
+    --cor11: #2C3597;
+    --cor12: #e7080f;
+    --cor13: #5D2A7D;
+    --cor14: #B93688;
+    --cor15: #841037;
+    --fonte_padrao: 'Noto';
+    --fonte_destaque: 'Biryani';
+}
+.form-container {
+  max-width: 720px;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background-image: linear-gradient(to bottom, var(--cor1), var(--cor9));
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(2, 70, 197, 0.63);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 680px) {
+  .form-row--two {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+.form-help {
+  font-size: 0.9rem;
+  color: hsla(249, 98%, 42%, 0.74);
+  margin-top: 0.25rem;
+}
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+</style>
+<div class="form-container">
+   <div class="cold-md-4">
+        <h3 class="mb-3">Login</h3>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Email: </label>
+                <input type="email" name="email" class="form-control", required>
+            </div>
+            <div class="mb-3">
+                <label class="form-lable">Senha: </label>
+                <input type="password" name="senha" class="from-control", required>
+            </div>
+            <button class="btn btn-primary w-100">Entrar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

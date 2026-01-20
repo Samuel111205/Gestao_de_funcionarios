@@ -1,38 +1,41 @@
 {% extends "base.html" %}
 {% block title %} Presencas {% endblock %}
-{% block conteudo %}
-<h3>Presencas de {{ funcionario.nome }}</h3>
-<form action="{{ url_for('presenca.registrar', funcionario_id=funcionario.id) }}" method="post">
-    <div class="row mb-3">
-        <div class="col">
-            <input type="date" name="data" class="form-control" required>
-        </div>
-        <div class="col form-checkbox mt-2">
-            <input type="checkbox" name="presente" class="form-checkbox-input" checked>7
-            <label class="form-checkbox-label">
-                Presente
-            </label>
-        </div>
-        <div class="col">
-            <button class="btn btn-primary">
-                Registrar
-            </button>
-        </div>
-    </div>
-</form>
+{% block content %}
+<h2>Controle de Presenças </h2>
+<p>
+    Funcionario: <strong>{{ contrato.funcionario.nome_funcionario }}</strong>
+</p>
+<p>
+    Tipo de contrato: <strong>{{ contrato.tipo }}</strong>
+</p>
+<hr>
+<a href="{{ url_for('presenca.registrar_entrada', contrato_id=contrato.id)}}" class="btn-primary">Registar Entrada</a>
+<br><br>
 <table class="table table-hover">
     <tr>
         <th>Data</th>
-        <th>Status</th>
+        <th>Hora de Entrada</th>
+        <th>Hora de Saida</th>
+        <th>Ações</th>
     </tr>
-    {% for p in funcionario.presencas %}
+    {% for p in presencas %}
     <tr>
         <td>{{ p.data }}</td>
+        <th>{{ p.hora_entrada or '---'}}</th>
         <td>
-            {% if p.presente %}
-                presente
+            {% if p.hora_saida %}
+                {{ p.hora_saida }}
             {% else %}
-                Falta
+                ---
+            {% endif %}
+        </td>
+        <td>
+            {% if not p.hora_saida %}
+                <a href="{{ url_for('presenca.registrar_saida', presenca_id=p.id) }}">
+                    Registrar saida
+                </a>
+            {% else %}
+                Finalizado
             {% endif %}
         </td>
     </tr>

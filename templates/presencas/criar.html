@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Contrato{% endblock %}
+{% block content %}
+<style>
+/* Pequeno fallback caso o CSS externo não esteja carregado; recomendo usar o arquivo static/css/funcionarios.css */
+:root{
+    /*  cores 1 */
+    --cor1: #BF0F1E;
+    --cor2: #c0b6b6;
+    --cor3: #BE84BF;
+    --cor4: #A62E86;
+    --cor5: #8C1440;
+        /* cores 2  */
+    --cor6: #4A1472;
+    --cor7: #f7170fc9;
+    --cor8: #194977 ;
+    --cor9: #130950;
+    --cor10: #350FA3;
+        /*  cores 3 */
+    --cor11: #2C3597;
+    --cor12: #e7080f;
+    --cor13: #5D2A7D;
+    --cor14: #B93688;
+    --cor15: #841037;
+    --fonte_padrao: 'Noto';
+    --fonte_destaque: 'Biryani';
+}
+.form-container {
+  max-width: 720px;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background-image: linear-gradient(to bottom, var(--cor1), var(--cor9));
+  border-radius: 8px;
+  box-shadow: 0 6px 18px var(--cor11);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 680px) {
+  .form-row--two {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+.form-help {
+  font-size: 0.9rem;
+  color: hsla(249, 98%, 42%, 0.74);
+  margin-top: 0.25rem;
+}
+.form-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+h2{
+    color: var(--cor2);
+    font-family: var(--fonte_destaque);
+}
+</style>
+<div class="form-container">
+    <h3>Presencas de {{ funcionario.nome }}</h3>
+    <form action="{{ url_for('presenca.registrar', funcionario_id=funcionario.id) }}" method="post">
+        <div class="row mb-3">
+            <div class="col">
+                <input type="date" name="data" class="form-control" required>
+            </div>
+            <div class="col form-checkbox mt-2">
+                <input type="checkbox" name="presente" class="form-checkbox-input" checked>7
+                <label class="form-checkbox-label">
+                    Presente
+                </label>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary">
+                    Registrar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
